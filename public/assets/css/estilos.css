@@ -1,0 +1,517 @@
+:root {
+    --carbon: #272127;
+    --ciruela: #604052;
+    --dorado: #e6b68d;
+    --dorado-oscuro: #ce9569;
+    --crema: #f8f5ef;
+    --terracota: #f3e3db;
+    --blanco: #ffffff;
+    --texto: #30282d;
+    --gris: #655b60;
+    --borde: #e4d8d2;
+    --sombra: 0 8px 24px #2b202414;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--crema);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-principal {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Barra de navegación */
+
+.barra-nav {
+    background-color: var(--carbon);
+    padding: 12px 0;
+    border-bottom: 1px solid #ffffff24;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.navbar-nav .nav-link {
+    color: #f2e8e5;
+    margin: 0 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--dorado);
+}
+
+/* Botones */
+
+.btn-dorado {
+    background-color: var(--dorado);
+    color: var(--carbon);
+    border: 1px solid var(--dorado);
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+}
+
+.btn-dorado:hover {
+    background-color: var(--dorado-oscuro);
+    color: var(--carbon);
+    border-color: var(--dorado-oscuro);
+}
+
+.btn-carbon {
+    background-color: var(--carbon);
+    color: white;
+    border: 1px solid var(--carbon);
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.btn-carbon:hover {
+    background-color: var(--ciruela);
+    color: white;
+}
+
+/* Portada principal */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 85% 25%, #6a454b, transparent 68%), var(--carbon);
+    color: white;
+    padding: clamp(2.75rem, 7vw, 6rem) 0;
+}
+
+.hero h1 {
+    max-width: 14ch;
+    font-family: Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: -.04em;
+    line-height: 1.06;
+}
+
+.hero p {
+    max-width: 580px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #f2e8e5;
+}
+
+.foto-portada {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border: 1px solid #ffffff30;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px #1a141962;
+}
+
+/* Secciones */
+
+.seccion {
+    padding: 65px 0;
+}
+
+.titulo-seccion {
+    font-family: Georgia, serif;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    color: var(--gris);
+    margin-bottom: 40px;
+}
+
+/* Tarjetas de servicios */
+
+.tarjeta-servicio {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--sombra);
+}
+
+.foto-servicio {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.detalle-servicio {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(1.125rem, 3vw, 1.65rem);
+}
+
+.pasos-reserva h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.tarjeta-servicio h3 {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.precio-servicio {
+    margin-bottom: 1rem;
+    color: var(--ciruela);
+    font-weight: 700;
+}
+
+.tarjeta-servicio .btn {
+    margin-top: auto;
+}
+
+.pasos-reserva h4 {
+    border-top: 2px solid var(--dorado);
+    padding-top: 1rem;
+}
+
+.seccion-pasos {
+    background: #fffdf9;
+}
+
+.seccion-horario {
+    background: var(--terracota);
+}
+
+.datos-contacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: 1rem;
+    margin: 0;
+    text-align: start;
+}
+
+.datos-contacto > div {
+    padding: 1.25rem;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: var(--blanco);
+    overflow-wrap: anywhere;
+}
+
+.datos-contacto dt {
+    color: var(--ciruela);
+    margin-bottom: .4rem;
+}
+
+.datos-contacto dd {
+    margin-bottom: 0;
+}
+
+/* Formularios */
+
+.fondo-acceso {
+    --foto-acceso: url("../img/salon-640.webp");
+    background: linear-gradient(110deg, #272127ba, #27212729), var(--foto-acceso) center 48% / cover no-repeat, var(--carbon);
+    padding-block: clamp(2rem, 6vw, 5rem);
+}
+
+.fondo-acceso .formulario-card {
+    margin: 0 auto;
+    background: var(--blanco);
+    box-shadow: 0 18px 45px #21171b4d;
+    overflow-wrap: anywhere;
+}
+
+.formulario-card {
+    max-width: 540px;
+    margin: 45px auto;
+    padding: 35px;
+    background-color: white;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+
+.formulario-card.ancho {
+    max-width: 720px;
+}
+
+.formulario-card h2 {
+    font-weight: 700;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.form-control,
+.form-select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--borde);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--dorado-oscuro);
+    box-shadow: 0 0 0 3px #ce956944;
+}
+
+.enlace-ciruela {
+    color: var(--ciruela);
+    font-weight: 600;
+}
+
+/* Panel de administración */
+
+.panel {
+    padding: 35px 0 55px;
+}
+
+.panel-encabezado {
+    margin-bottom: 30px;
+}
+
+.panel-encabezado h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.panel-fondo-cliente,
+.panel-fondo-peluquero {
+    padding: clamp(1.25rem, 4vw, 2.75rem);
+    border-radius: 18px;
+    min-height: clamp(9rem, 17vw, 13rem);
+    align-content: center;
+    background: linear-gradient(100deg, var(--tono-panel) 12%, #272127d9 43%, #27212757), var(--foto-panel) center / cover no-repeat, var(--carbon);
+    color: var(--blanco);
+    overflow-wrap: anywhere;
+    --bs-secondary-color: #f5efe6;
+}
+
+.panel-fondo-cliente {
+    --foto-panel: url("../img/panel-cliente-640.webp");
+    --tono-panel: #422d3af5;
+    background-position: center, 68% 53%;
+}
+
+.panel-fondo-peluquero {
+    --foto-panel: url("../img/panel-peluquero-640.webp");
+    --tono-panel: #262026f5;
+    background-position: center, 70% 53%;
+}
+
+.panel-fondo-cliente p:last-child,
+.panel-fondo-peluquero p:last-child {
+    margin-bottom: 0;
+}
+
+.tarjeta-estadistica {
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px;
+    border-top: 3px solid var(--dorado);
+    box-shadow: var(--sombra);
+    height: 100%;
+}
+
+.tarjeta-estadistica h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 8px 0 0;
+}
+
+.tarjeta-estadistica p {
+    color: var(--gris);
+    margin: 0;
+}
+
+.tarjeta-panel {
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    height: 100%;
+}
+
+/* Tablas */
+
+.contenedor-tabla {
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: var(--sombra);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--crema);
+    color: var(--texto);
+    font-weight: 700;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 15px;
+}
+
+.badge {
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+/* Información de reserva */
+
+.resumen-reserva {
+    background: var(--crema);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.estado-conexion {
+    background: #fff3cd;
+    color: #664d03;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Pie de página */
+
+.pie-pagina {
+    background-color: var(--carbon);
+    color: #f2e8e5;
+    padding: 35px 0 20px;
+    margin-top: 30px;
+}
+
+.pie-pagina h5 {
+    font-size: 24px;
+    color: var(--dorado);
+    font-weight: 700;
+}
+
+/* Adaptación a dispositivos móviles */
+
+@media (max-width: 768px) {
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero h1 {
+        margin-inline: auto;
+    }
+
+    .formulario-card {
+        padding: 24px;
+        margin: 25px auto;
+    }
+
+    .seccion {
+        padding: 40px 0;
+    }
+
+    .panel-encabezado h1 {
+        font-size: 25px;
+    }
+
+    .panel-fondo-cliente,
+    .panel-fondo-peluquero {
+        background-image: linear-gradient(100deg, var(--tono-panel), #272127b8), var(--foto-panel);
+    }
+
+    .tarjeta-estadistica {
+        padding: 18px;
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .foto-portada {
+        border-radius: 16px;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding-inline: .9rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .fondo-acceso {
+        --foto-acceso: url("../img/salon-1200.webp");
+    }
+
+    .panel-fondo-cliente {
+        --foto-panel: url("../img/panel-cliente-1200.webp");
+    }
+
+    .panel-fondo-peluquero {
+        --foto-panel: url("../img/panel-peluquero-1200.webp");
+    }
+}
+
+@media (min-width: 992px) {
+    .fondo-acceso .formulario-card {
+        margin-inline: 0 auto;
+        max-width: 460px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
